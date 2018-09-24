@@ -1,0 +1,10 @@
+<div class="cart">
+  Fixed place for cart
+  <div *ngIf="!cart || cart === '{}'; else elseBlock">Cart is empty</div>
+  <ng-template #elseBlock>
+    <div>
+      {{cart}}
+    </div>
+  </ng-template>
+  <button (click)="clearCart()">Clear cart!</button>
+</div>
