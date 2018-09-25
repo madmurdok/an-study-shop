@@ -1,0 +1,5 @@
+<h1>{{title}}</h1>
+
+<div *ngFor='let product of products'>
+  <app-product [product] = "product" (buyItem)="onBuyItem($event)" (addToCart)="onAddToCartItem($event)"></app-product>
+</div>
