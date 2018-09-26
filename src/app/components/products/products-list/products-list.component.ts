@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../../models/product.model';
-import { ProductComponent } from '../product/product.component';
-import { ProductsService } from './services/products.service';
-import { CartService } from '../../cart/services/cart.service';
+// import { ProductComponent } from '../product/product.component';
+import { ProductsService } from '../../../services/products.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-products-list',
@@ -31,6 +31,6 @@ export class ProductsListComponent implements OnInit {
 
   onAddToCartItem(item) {
     this.cartService.putToCart(item);
-    console.log('Items in cart:', this.cartService.getCartFormatted());
+    console.log('Items in cart:', this.cartService.getCart());
   }
 }

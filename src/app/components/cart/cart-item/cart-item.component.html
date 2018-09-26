@@ -1,0 +1,7 @@
+<p>
+  {{item.name}}
+  <button (click)="decrementQuantity(item)">-</button>
+  <input name="quantity" type="number" value="{{item.quantity}}"/>
+  <button (click)="incrementQuantity(item)">+</button>
+</p>
+<p>Price: {{item.price | currency : 'USD'}}</p>

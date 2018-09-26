@@ -4,7 +4,6 @@ import { Product } from '../../../models/product.model';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  // template: `<p>hurrah</p>`,
   styleUrls: ['./product.component.css']
 })
 

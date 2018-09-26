@@ -1,0 +1,19 @@
+<div class="cart">
+  <ng-container *ngIf="(cartItems | keyvalue) as itemsArray; else elseBlock">
+    <div *ngIf="itemsArray.length > 0; else buyMoreTea">
+      <div *ngFor="let item of itemsArray">
+        <app-cart-item [item]="item.value" (increment)="increment($event)"
+                       (decrement)="decrement($event)"></app-cart-item>
+      </div>
+    </div>
+    <ng-template #buyMoreTea>
+      Your cart is empty! Please add something to it :)
+    </ng-template>
+  </ng-container>
+  <ng-template #elseBlock>
+    Cart is empty
+  </ng-template>
+  <div class="bottom">Total price: {{total | currency : 'USD'}}
+  </div>
+  <button name="clear-cart" (click)="clearCart()">Clear cart!</button>
+</div>

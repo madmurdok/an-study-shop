@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../../../models/product.model';
-import { ProductCategory} from '../../../shared/enums';
+import { Product } from '../models/product.model';
+import { ProductCategory} from '../components/shared/enums';
 
 @Injectable({
   providedIn: 'root'
