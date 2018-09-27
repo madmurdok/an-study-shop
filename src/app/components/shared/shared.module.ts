@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SetBackgroundDirective } from '../../directives/set-background.directive';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [
+    SetBackgroundDirective
+  ],
+  exports: [
+    SetBackgroundDirective
+  ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

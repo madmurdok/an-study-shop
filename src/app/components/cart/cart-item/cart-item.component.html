@@ -1,4 +1,4 @@
-<p>
+<p appSetBackground [highlight]="lightgrey" class="cart-item-wrapper">
   {{item.name}}
   <button (click)="decrementQuantity(item)">-</button>
   <input name="quantity" type="number" value="{{item.quantity}}"/>
