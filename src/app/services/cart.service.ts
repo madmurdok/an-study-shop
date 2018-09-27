@@ -64,6 +64,7 @@ export class CartService {
 
   clear() {
     this.cart = [];
+    this.total = 0;
     this.notify();
   }
 }
