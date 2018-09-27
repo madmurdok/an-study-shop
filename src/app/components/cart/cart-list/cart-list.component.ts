@@ -45,4 +45,8 @@ export class CartComponent implements OnInit, OnDestroy {
   decrement(item) {
     this.cartService.removeFromCart(item);
   }
+
+  update(item) {
+    this.cartService.updateQuantity(item);
+  }
 }

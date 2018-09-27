@@ -2,8 +2,10 @@
   <ng-container *ngIf="(cartItems | keyvalue) as itemsArray; else elseBlock">
     <div *ngIf="itemsArray.length > 0; else buyMoreTea">
       <div *ngFor="let item of itemsArray">
-        <app-cart-item [item]="item.value" (increment)="increment($event)"
-                       (decrement)="decrement($event)"></app-cart-item>
+        <app-cart-item [item]="item.value" 
+                (increment)="increment($event)"
+                (decrement)="decrement($event)"
+                (update)="update($event)"></app-cart-item>
       </div>
     </div>
     <ng-template #buyMoreTea>
