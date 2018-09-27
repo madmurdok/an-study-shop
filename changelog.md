@@ -19,5 +19,6 @@
 - CartItemComponent и CartListComponent общаются через Input и Output
 - В CartItemComponent используется директива ngModel и ngModelChange для <input>
 - Простановка бордера для ProductComponent реализована через ngClass и @HostLintener
+- Title в AppComponent выставляется чере @ViewChild
 
 Не получилось использовать ChangeDetectionStrategy... и не очень понятно что делать с CoreModule. Он пока что пустой.
