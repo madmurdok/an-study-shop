@@ -1,5 +1,5 @@
 import {ProductInterface} from './interfaces/product.interface';
-import {ProductCategory} from '../components/shared/enums';
+import {ProductCategory} from '../enums';
 
 export class Product implements ProductInterface {
   constructor (
