@@ -4,17 +4,27 @@ import { CartItemModel } from '../../../shared/models/cart-item.model';
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  styleUrls: ['./cart-item.component.css'],
+  //  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CartItemComponent implements OnInit {
+export class CartItemComponent implements OnInit, OnChanges {
   @Input() item: CartItemModel;
   @Output() decrement: EventEmitter<CartItemModel> = new EventEmitter<CartItemModel>();
   @Output() increment: EventEmitter<CartItemModel> = new EventEmitter<CartItemModel>();
+  @Output() update: EventEmitter<CartItemModel> = new EventEmitter<CartItemModel>();
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  ngOnChanges () {
+    console.log('check!');
+  }
+
+  onChange() { // fires 2 times? why?
+    this.update.emit(this.item);
   }
 
   incrementQuantity(cartItem) {

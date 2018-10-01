@@ -1,7 +1,8 @@
-<p appSetBackground [highlight]="lightgrey" class="cart-item-wrapper">
+<p appSetBackground="lightgrey" class="cart-item-wrapper">
   {{item.name}}
   <button (click)="decrementQuantity(item)">-</button>
-  <input name="quantity" type="number" value="{{item.quantity}}"/>
+  <input [(ngModel)] ="item.quantity" (ngModelChange)="onChange($event)" name="quantity" type="number"/>
+  <!-- <input name="quantity" type="number" value="{{item.quantity}}"/> -->
   <button (click)="incrementQuantity(item)">+</button>
 </p>
 <p>Price: {{item.price | currency : 'USD'}}</p>

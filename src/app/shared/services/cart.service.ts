@@ -38,6 +38,21 @@ export class CartService {
     this.notify();
   }
 
+  updateQuantity(item) {
+    this.cart[item.name]['quantity'] = item.quantity;
+    this.total = this.getTotal();
+    this.notify();
+  }
+
+  getTotal(): number {
+    const keys = Object.keys(this.cart);
+    let total = 0;
+    for (const key of keys) {
+      total += this.cart[key]['price'] * this.cart[key]['quantity'];
+    }
+    return total;
+  }
+
   getCart() {
     return this.cart;
   }
@@ -49,6 +64,7 @@ export class CartService {
 
   clear() {
     this.cart = [];
+    this.total = 0;
     this.notify();
   }
 }

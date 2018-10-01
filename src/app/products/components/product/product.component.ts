@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, HostListener } from '@angular/core';
 import { Product } from '../../../shared/models/product.model';
 
 @Component({
@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   @Output() buyItem: EventEmitter<Product> = new EventEmitter<Product>();
   @Output() addToCart: EventEmitter<Product> = new EventEmitter<Product>();
+  isHover = false;
 
   constructor() {
   }
@@ -25,6 +26,15 @@ export class ProductComponent implements OnInit {
 
   onAddToCartItem(current) {
     this.addToCart.emit(current);
+  }
+
+  @HostListener('mouseenter')
+  onMouseEnter () {
+    this.isHover = true;
+  }
+  @HostListener('mouseleave')
+  onMouseLeave () {
+    this.isHover = false;
   }
 
 }
