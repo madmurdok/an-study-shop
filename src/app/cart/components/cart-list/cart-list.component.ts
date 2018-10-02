@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CartService } from '../../../shared/services/cart.service';
+import { CartService } from '../../../shared/services';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -7,11 +7,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.css']
 })
-export class CartComponent implements OnInit, OnDestroy {
+export class CartListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private totalSub: Subscription;
   cartItems: Object = {};
-  total: number;
+  totals: {price: number, count: number} = {price: 0, count: 0};
 
   constructor(private cartService: CartService) { }
 
@@ -24,14 +24,15 @@ export class CartComponent implements OnInit, OnDestroy {
     );
     this.totalSub = this.cartService.totalChannel$.subscribe(
       data => {
-        console.log(this.total);
-        this.total = data;
+        console.log(this.totals);
+        this.totals = data;
       }
     );
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.totalSub.unsubscribe();
   }
 
   clearCart() {

@@ -1,17 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  @ViewChild('appTitle', {read: ViewContainerRef}) appTitle: ViewContainerRef;
-  title = 'shop';
+export class AppComponent implements AfterViewInit {
+  @ViewChild('appTitle') appTitle: ElementRef;
 
-  ngOnInit() {
-    this.appTitle.element.nativeElement.innerText = 'Welcome to Tea Shop!';
+  ngAfterViewInit () {
+    this.appTitle.nativeElement.innerText = 'Welcome to Tea Shop!';
   }
 
 }

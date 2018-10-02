@@ -2,7 +2,7 @@
   <ng-container *ngIf="(cartItems | keyvalue) as itemsArray; else elseBlock">
     <div *ngIf="itemsArray.length > 0; else buyMoreTea">
       <div *ngFor="let item of itemsArray">
-        <app-cart-item [item]="item.value" 
+        <app-cart-item [item]="item.value"
                 (increment)="increment($event)"
                 (decrement)="decrement($event)"
                 (update)="update($event)"></app-cart-item>
@@ -15,7 +15,9 @@
   <ng-template #elseBlock>
     Cart is empty
   </ng-template>
-  <div class="bottom">Total price: {{total | currency : 'USD'}}
+  <div class="bottom">Total price: {{totals.price | currency : 'USD'}}
+  </div>
+  <div class="total-count">Total count: {{totals.count | number : 0}}
   </div>
   <button name="clear-cart" (click)="clearCart()">Clear cart!</button>
 </div>

@@ -22,3 +22,7 @@ div.cart {
   bottom: 5px;
   left: 5px;
 }
+
+.total-count {
+  padding-bottom: 20px;
+}

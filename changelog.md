@@ -14,11 +14,17 @@
 - Реогранизованна структура кода, разделил по моделям/сервисам/директивам и компонентам
 - Данные о товарах и содержимом корзины выдаются из сервисов ProductsService, CartService
 - Сделаны интерфейсы на ProductModel, CartItemModel
-- Директива SetBackgroundDirective отвечает за изменение фона в козине при помози @HostListener и @HostBinding
+- Директива SetBackgroundDirective отвечает за изменение фона в козине при помощи @HostListener и @HostBinding
 - Общение CartService с CartListComponent орагнизованна через observable
 - CartItemComponent и CartListComponent общаются через Input и Output
-- В CartItemComponent используется директива ngModel и ngModelChange для <input>
+- В CartItemComponent используется директива ngModel и ngModelChange для < input >
 - Простановка бордера для ProductComponent реализована через ngClass и @HostLintener
 - Title в AppComponent выставляется чере @ViewChild
 
-Не получилось использовать ChangeDetectionStrategy... и не очень понятно что делать с CoreModule. Он пока что пустой.
+# Homework 03
+Сделана ветка Task3
+- Поправлено Issue#5 ( в целом переделал структуру, теперь все разбито по  модулям)
+- Добавлены удобные импорты через index.ts для всех компонентов/сервисов/директив/моделей внутри feature-модулей
+- Поправлено Issue#6(переименован в CartListComponent)
+- Поправлено Issue#3(@ViewChild + ElementRef)
+- 
