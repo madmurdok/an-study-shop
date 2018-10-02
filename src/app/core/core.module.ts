@@ -8,8 +8,6 @@ import { ConstantsService, ConfigOptionsService, LocalStorageService } from './s
     CommonModule
   ],
   providers: [
-    ConstantsService,
-    ConfigOptionsService,
-    LocalStorageService]
+   ]
 })
 export class CoreModule { }
