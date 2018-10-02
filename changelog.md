@@ -27,4 +27,20 @@
 - Добавлены удобные импорты через index.ts для всех компонентов/сервисов/директив/моделей внутри feature-модулей
 - Поправлено Issue#6(переименован в CartListComponent)
 - Поправлено Issue#3(@ViewChild + ElementRef)
-- 
+- Issue#4 public cart: Object ==> public cart: CartMapInterface (использую интерфейс из shared/models/intefaces/cart-map.interface)
+- Issue#7 - закрыто
+- Issue#8 - хочу еще немного поисследовать, работало 2 раза на каждое изменение модели.
+- Несколько переработаны и отрефакторенны cart-service, cart-list.component
+- В core созданы сервисы: LocalSorageService, ConfigOptionsService, ConstantsService, GeneratorFactory
+- Создан ContactModule с компонентом ContactUsComponent (шаблон пока что пустой)
+- В ContactUsComponent инджектнуты сервисы ConfigOptionsService, GeneratorFactory с использованием useFactory, LocalStorageService и CONSTANTS с использованием useValue,
+также используется @Optional
+- В SharedModule добавлена директива HostClickDirective, меняющая размер шрифта тайтла при клике на него мышкой
+- ContuctUsComponent пока не тестировал, надо сделать верстку, думаю в HW4 проверю как оно работает и работает ли вообще
+
+
+## Вопросы
+> Не очень понятно как сервисы в CoreModule имплементировать. 
+> Если я все равно использую токен и useValue для ConstantsService - то по сути он тут лишний?
+> Я так понимаю для HostClickDirective подразумевалось что стоит использовать @Host ?
+
