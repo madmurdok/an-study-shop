@@ -6,10 +6,12 @@ import { OrdersModule } from './orders/orders.module';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
+import { HostClickDirective } from './shared/directives/host-click.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HostClickDirective
   ],
   imports: [
     BrowserModule,
