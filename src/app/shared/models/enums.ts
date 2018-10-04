@@ -3,5 +3,6 @@ export enum ProductCategory {
   YellowTea = 'Yellow Tea',
   RedTea = 'Red Tea',
   Oolong = 'Oolong',
-  BlackTea = 'Black Tea'
+  BlackTea = 'Black Tea',
+  GreenTea= 'GreenTea'
 }

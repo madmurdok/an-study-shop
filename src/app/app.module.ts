@@ -13,12 +13,12 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    CoreModule,
+    SharedModule,
     BrowserModule,
     ProductsModule,
     CartModule,
-    OrdersModule,
-    CoreModule,
-    SharedModule
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

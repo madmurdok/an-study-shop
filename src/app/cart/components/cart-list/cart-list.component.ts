@@ -1,11 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from '../../../shared/services';
+import { OrderByPipe } from '../../../shared/pipes/order-by.pipe';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart-list.component.html',
-  styleUrls: ['./cart-list.component.css']
+  styleUrls: ['./cart-list.component.css'],
+  providers: [OrderByPipe]
 })
 export class CartListComponent implements OnInit, OnDestroy {
   private subscription: Subscription;

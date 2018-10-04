@@ -1,5 +1,17 @@
 <div class="cart">
-  <ng-container *ngIf="(cartItems | keyvalue) as itemsArray; else elseBlock">
+  <p>
+      <select #sortType>
+          <option value='name' selected>Sort by name</option>
+          <option value='price'>Sort by price</option>
+        </select>
+      &nbsp;
+        <select #sortOrder>
+            <option value='asc' selected>Ascending</option>
+            <option value='desc'>Descending</option>
+          </select>
+  </p>
+  
+  <ng-container *ngIf="(cartItems | keyvalue | orderBy : true) as itemsArray; else elseBlock">
     <div *ngIf="itemsArray.length > 0; else buyMoreTea">
       <div *ngFor="let item of itemsArray">
         <app-cart-item [item]="item.value"
