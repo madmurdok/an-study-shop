@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { ConfigModel} from '../../shared/models';
 
+import { CoreModule } from '../core.module';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: CoreModule
 })
 export class ConfigOptionsService {
 

@@ -10,7 +10,7 @@ import { CartService } from '../../../shared/services';
 })
 export class ProductsListComponent implements OnInit {
 
-  public products: Array<Product>;
+  public products: Promise<Array<Product>>;
   public title: string;
 
   constructor(

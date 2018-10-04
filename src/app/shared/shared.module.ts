@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetBackgroundDirective, HostClickDirective } from './directives';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   imports: [
@@ -8,7 +9,8 @@ import { SetBackgroundDirective, HostClickDirective } from './directives';
   ],
   declarations: [
     SetBackgroundDirective,
-    HostClickDirective
+    HostClickDirective,
+    OrderByPipe
   ],
   exports: [
     SetBackgroundDirective,

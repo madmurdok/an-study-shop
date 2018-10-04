@@ -2,8 +2,8 @@
 <ul>
   <li>Name: {{product.name}}</li>
   <li>Description: {{product.description}}</li>
-  <li>Price: {{product.price}}</li>
-  <li>Category: {{product.category}}</li>
+  <li>Price: {{product.price | currency : 'USD'}}</li>
+  <li>Category: {{product.category | uppercase}}</li>
   <li>Origin country: {{product.origin}}</li>
   <li>Awailable for order: {{product.isAwailable}}</li>
   <li>Awailable in stock(+2 days for shipping): {{product.isInStock}}</li>
