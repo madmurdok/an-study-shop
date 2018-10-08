@@ -14,6 +14,10 @@ export class CartListComponent implements OnInit, OnDestroy {
   private totalSub: Subscription;
   cartItems: Object = {};
   totals: {price: number, count: number} = {price: 0, count: 0};
+  public sort = {
+    type: 'name',
+    order: 'asc'
+  };
 
   constructor(private cartService: CartService) { }
 
@@ -35,6 +39,11 @@ export class CartListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.totalSub.unsubscribe();
+  }
+  triggerChange(key, value) {
+    console.log(key, value);
+    this.sort[key] = value;
+    this.cartService.ping();
   }
 
   clearCart() {

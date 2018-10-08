@@ -1,17 +1,17 @@
 <div class="cart">
   <p>
-      <select #sortType>
+      <select (change)="triggerChange('type',$event.target.value)">
           <option value='name' selected>Sort by name</option>
           <option value='price'>Sort by price</option>
         </select>
       &nbsp;
-        <select #sortOrder>
+        <select (change)="triggerChange('order',$event.target.value)">
             <option value='asc' selected>Ascending</option>
             <option value='desc'>Descending</option>
           </select>
   </p>
   
-  <ng-container *ngIf="(cartItems | keyvalue | orderBy : true) as itemsArray; else elseBlock">
+  <ng-container *ngIf="(cartItems | keyvalue | orderByKey: sort.type : sort.order == 'desc') as itemsArray; else elseBlock">
     <div *ngIf="itemsArray.length > 0; else buyMoreTea">
       <div *ngFor="let item of itemsArray">
         <app-cart-item [item]="item.value"

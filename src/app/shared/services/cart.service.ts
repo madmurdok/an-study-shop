@@ -50,6 +50,10 @@ export class CartService {
     this.notify();
   }
 
+  ping() {
+    this.notify();
+  }
+
   increaseTotals(price: number, quantity: number) {
     this.totalPrice += (price * quantity);
     this.totalCount += quantity;
