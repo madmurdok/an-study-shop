@@ -46,3 +46,9 @@
 
 > Я так понимаю для HostClickDirective подразумевалось что стоит использовать @Host ?
 
+# Homework 04
+Создал ветку Task4
+- Пайпы для цены и чисел используются в шаблонах: CartListComponent, CartItemComponent, ProductComponent
+- Пайп для апперкейса в шаблоне ProductComponent
+- getProducts() - возвращает промис, сделана задержка в 2 секунды + async pipe в ProductsListComponent
+- Сделан кастомный пайп в SharedModule - OrderByPipe, применяется в CartListComponent совместно с keyvalue пайпом
