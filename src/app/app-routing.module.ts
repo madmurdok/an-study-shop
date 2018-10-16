@@ -10,6 +10,11 @@ const routes: Routes = [
     component: LoginComponent,
     data: { title: 'Login' }
   },
+  {
+    path: 'goods',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   // {
   //   path: 'admin',
   //   canLoad: [AuthGuard],
@@ -27,7 +32,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'item-description',
+    path: 'item/:itemId',
     component: ItemDescriptionComponent,
     outlet: 'item-desc'
   },

@@ -1,13 +1,14 @@
 <div [ngClass]="{'border': isHover}" style="width: 600px;">
-<ul>
-  <li>Name: {{product.name}}</li>
-  <li>Description: {{product.description}}</li>
-  <li>Price: {{product.price | currency : 'USD'}}</li>
-  <li>Category: {{product.category | uppercase}}</li>
-  <li>Origin country: {{product.origin}}</li>
-  <li>Awailable for order: {{product.isAwailable}}</li>
-  <li>Awailable in stock(+2 days for shipping): {{product.isInStock}}</li>
-</ul>
-<button [disabled]="!product.isAwailable" (click)="onBuyItem(product)">Buy me!</button>
-<button (click)="onAddToCartItem(product)">Add to cart</button>
+  <ul>
+    <li>Name: {{product.name}}</li>
+    <li>Description: {{product.description}}</li>
+    <li>Price: {{product.price | currency : 'USD'}}</li>
+    <li>Category: {{product.category | uppercase}}</li>
+    <li>Origin country: {{product.origin}}</li>
+    <li>Awailable for order: {{product.isAwailable}}</li>
+    <li>Awailable in stock(+2 days for shipping): {{product.isInStock}}</li>
+  </ul>
+  <button (click)="onBuyItem(product)">Show info</button>
+  <button [disabled]="!product.isAwailable" (click)="onBuyItem(product)">Buy me!</button>
+  <button (click)="onAddToCartItem(product)">Add to cart</button>
 </div>

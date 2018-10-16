@@ -1,0 +1,18 @@
+.grid {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+.grid li {
+  list-style-type: none; /* Убираем маркеры */
+}
+
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.active a {
+  color: red;
+}
